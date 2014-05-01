@@ -5,17 +5,22 @@ using System.Collections;
 public class MyDialogueSystem : MonoBehaviour 
 {
 	public bool debugMode = false;
-	public Texture2D Image = null;
-	public Rect position = new Rect (10, 10, 150, 150);
 	public bool ShowGUI = false; 
 	public bool checkKeyDown = false;
+    public GUIStyle style = null;
+    public string[] answers;
+    public string[] questions;
+
+    
+  
+
 
 	void OnTriggerEnter (Collider other) //enter the trigger
 	{			
 				if ((other.gameObject.name == "Collider_player"))
 				{
 					ShowGUI = true;
-					 Debug.Log ("no way");
+					 Debug.Log ("Collider - check");
 		  }
 		}
 	void OnTriggerExit (Collider other) //exit the trigger
@@ -32,7 +37,7 @@ public class MyDialogueSystem : MonoBehaviour
 		    {
 			if (!checkKeyDown){
 		    checkKeyDown = true;
-	   		 Debug.Log ("BUTTSEX");
+	   		 Debug.Log ("Key down - check");
 			}
 		  }
 		if (ShowGUI == false) {
@@ -43,12 +48,16 @@ public class MyDialogueSystem : MonoBehaviour
 
 	void OnGUI()//GUI box
 		{
+            GUILayout.BeginArea(new Rect(10, 50, 150, 150));
 		if (debugMode || Application.isPlaying){
-		if (ShowGUI == true && checkKeyDown==true) 
+            if (ShowGUI == true && checkKeyDown == true) 
 		 {
-				GUI.Box (position, Image);
 
-			 }
+             GUILayout.Label(questions[0]);
+
+
+                }
 			}
-		}
-	}
+        }
+}
+	
