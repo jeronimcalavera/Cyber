@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\MyDialogueSystem.cs">
     <Files>
-      <File FileName="Assets\Script\MyDialogueSystem.cs" Line="16" Column="8" />
+      <File FileName="Assets\Script\NewBehaviourScript.cs" Line="22" Column="28" />
+      <File FileName="Assets\Script\MyDialogueSystem.cs" Line="61" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

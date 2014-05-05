@@ -5,59 +5,61 @@ using System.Collections;
 public class MyDialogueSystem : MonoBehaviour 
 {
 	public bool debugMode = false;
-	public bool ShowGUI = false; 
-	public bool checkKeyDown = false;
+	public bool ShowGUI = false;
+    public bool CheckKeyDown = false;
     public GUIStyle style = null;
-    public string[] answers;
-    public string[] questions;
+    string[] Q;
+	int index = 0;
 
-    
-  
-
-
+	
+	
 	void OnTriggerEnter (Collider other) //enter the trigger
 	{			
-				if ((other.gameObject.name == "Collider_player"))
-				{
-					ShowGUI = true;
-					 Debug.Log ("Collider - check");
-		  }
+		if ((other.gameObject.name == "Collider_player"))
+		{
+			ShowGUI = true;
+			Debug.Log ("Collider - check");
 		}
+	}
 	void OnTriggerExit (Collider other) //exit the trigger
 	{
 		if ((other.gameObject.name == "Collider_player"))
 		{
 			ShowGUI = false;
-			 Debug.Log ("ah, go away");
+            index = 0;
+			Debug.Log ("ah, go away");
 		}
 	}
-
-	void Update (){ //press enter to execute
-		if (Input.GetKey("return") && ShowGUI == true)
-		    {
-			if (!checkKeyDown){
-		    checkKeyDown = true;
-	   		 Debug.Log ("Key down - check");
-			}
-		  }
-		if (ShowGUI == false) {
-			checkKeyDown = false;		
-		}
-	   }
-
-
-	void OnGUI()//GUI box
-		{
-            GUILayout.BeginArea(new Rect(10, 50, 150, 150));
-		if (debugMode || Application.isPlaying){
-            if (ShowGUI == true && checkKeyDown == true) 
-		 {
-
-             GUILayout.Label(questions[0]);
-
-
-                }
-			}
-        }
-}
 	
+	void Update (){ //press enter to execute
+		if (Input.GetKeyDown("return") && ShowGUI == true)
+		{
+            index++;
+            CheckKeyDown = true;
+
+		}
+		if (ShowGUI == false) {
+            CheckKeyDown = false;		
+		}
+	}
+	
+	
+	void OnGUI()//GUI box
+	{
+        Q = new string[5];
+        Q[0] = "EMPTY";
+        Q[1] = "Hello";
+        Q[2] = "You fucked my wife";
+        Q[3] = "I AM your wife";
+        Q[4] = "I am your wife and i fucked her";
+
+		if (debugMode || Application.isPlaying){
+            if (ShowGUI == true && CheckKeyDown == true)
+			{
+				GUI.Label(new Rect(10,10,120,120), Q[index]);
+				
+			}
+			
+		}
+	}
+}
