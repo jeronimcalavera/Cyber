@@ -1,0 +1,9 @@
+27.04.2014
+..........
+1.) Change Log
+2.) Design documents: NPC, Raw ideas, Technologiesu c
+
+06.05.2014
+...........
+1.) Now you can scroll the dialogue
+2.) You have a few different choices in conversation
