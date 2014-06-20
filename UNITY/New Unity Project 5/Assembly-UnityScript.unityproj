@@ -49,9 +49,7 @@
      <Compile Include="Assets\Resources\Scripts\DialogueInstance.js" />
      <Compile Include="Assets\Script\ASSUMEDIRECTCONTROL.js" />
      <Compile Include="Assets\Script\LevelManagerScript.js" />
-     <Compile Include="Assets\Script\NPC.js" />
      <Compile Include="Assets\Script\Sound.js" />
-     <Compile Include="Assets\Script\True Script.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
