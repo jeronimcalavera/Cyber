@@ -147,7 +147,7 @@ public class MyDialogueSystem : MonoBehaviour
             if (ShowGUI == true && CheckKeyDown == true && Answer == true)
 			{
               
-				GUI.Label(new Rect(10,130,120,120), Q[index], style); //first part of the dialogue
+				GUI.Label(new Rect(100,300,120,120), Q[index], style); //first part of the dialogue
  
 			}
             if (ShowGUI == true && CheckKeyDown == true && fork == true)
